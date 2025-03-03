@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({
             </>
           ) : (
             <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Task Management
+              Task Manager
             </h1>
           )}
         </div>
