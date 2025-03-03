@@ -1,3 +1,4 @@
+// Header.tsx
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import AuthModal from './AuthModal';
@@ -48,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <div className="bg-white border-b border-gray-200 py-4 px-6">
+    <div className={`${userEmail ? 'bg-white border-b border-gray-200' : 'bg-transparent'} py-4 px-6`}>
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           {userEmail ? (
@@ -78,7 +79,9 @@ const Header: React.FC<HeaderProps> = ({
               )}
             </>
           ) : (
-            <h1 className="text-2xl font-bold">Todo App</h1>
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Task Management
+            </h1>
           )}
         </div>
 
@@ -96,9 +99,11 @@ const Header: React.FC<HeaderProps> = ({
           ) : (
             <button
               onClick={() => setShowAuth(true)}
-              className="px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-md hover:from-blue-700 hover:to-blue-600 transition-all"
+              className="px-6 py-2 bg-gradient-to-r from-indigo-600 to-purple-500 text-white rounded-full 
+                         hover:from-indigo-700 hover:to-purple-600 transition-all shadow-lg hover:shadow-xl
+                         font-semibold text-sm"
             >
-              {isLogin ? 'Login' : 'Sign Up'}
+              Get Started
             </button>
           )}
         </div>
